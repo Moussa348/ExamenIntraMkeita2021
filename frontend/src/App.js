@@ -38,6 +38,31 @@ function App() {
               <h1>List Of Guess Choices</h1>
             </div>
           </div>
+
+          <div className="row d-flex justify-content-center m-5">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {list.map((value, key) => (
+                  <tr key={key}>
+                    <th scope="row">{value.id}</th>
+                    <td>{value.name}</td>
+                    <td>{value.randomNumber}</td>
+                    <td>{value.yourNumber}</td>
+                    <td>{value.guessIsRight}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </>
