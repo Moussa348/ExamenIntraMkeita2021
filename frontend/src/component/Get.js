@@ -80,7 +80,7 @@ const Get = ({ id, email, firstName, lastName, phoneNumber, removeById }) => {
             </div>
           </div>
           <DeleteButton id={id} removeById={removeById} />
-          <UpdateButton id={id} data={data} />
+          <UpdateButton data={data} />
         </div>
       </div>
     </>
