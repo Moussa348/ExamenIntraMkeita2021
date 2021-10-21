@@ -1,10 +1,12 @@
 import "./App.css";
-import GetList from "./GetList";
+import GetList from "./component/GetList";
+import Form from "./component/Form";
 
 function App() {
   return (
     <>
       <GetList />
+      <Form />
     </>
   );
 }

@@ -9,6 +9,7 @@ const DeleteButton = ({id,removeById}) => {
       responseType: "json",
     })
       .then((response) => {
+          console.log(id);
         console.log(response.data);
         removeById(id);
       })

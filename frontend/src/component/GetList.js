@@ -13,6 +13,7 @@ const GetList = () => {
         responseType: "json",
       })
         .then((response) => {
+          console.log(response.data);
           setList(response.data);
         })
         .catch((error) => {
@@ -24,24 +25,28 @@ const GetList = () => {
   }, []);
 
   const removeById = (id) => {
-    setList(list.filter((o) => o.id != id));
+    setList(list.filter((o) => o.id !== id));
   };
-
 
   return (
     <>
       <div className="container">
-        {list.map((object, key) => (
-          <Get
-            key={key}
-            id={object.id}
-            email={object.email}
-            firstName={object.firstName}
-            lastName={object.lastName}
-            phoneNumber={object.phoneNumber}
-            removeById={removeById}
-          />
-        ))}
+        <div className="flex-row d-flex justify-content-center mt-4">
+          <h1>List Data</h1>
+        </div>
+        <div className="row d-flex justify-content-center">
+          {list.map((object, key) => (
+            <Get
+              key={key}
+              id={object.id}
+              email={object.email}
+              firstName={object.firstName}
+              lastName={object.lastName}
+              phoneNumber={object.phoneNumber}
+              removeById={removeById}
+            />
+          ))}
+        </div>
       </div>
     </>
   );
