@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 
-const Form = () => {
+const Form = ({addInList}) => {
   const [data, setData] = useState({
     id: null,
     name: "",
@@ -55,7 +55,7 @@ const Form = () => {
               </form>
             </div>
           </div>
-          <Button data={data} />
+          <Button data={data} addInList={addInList} />
         </div>
       </div>
     </>

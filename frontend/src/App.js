@@ -26,11 +26,16 @@ function App() {
     findAll();
   }, []);
 
+  const addInList = (data) => {
+    list.push(data);
+    setList(list);
+  };
+
   return (
     <>
       <div className="container">
         <div className="row d-flex justify-content-center">
-          <Form />
+          <Form addInList={addInList}/>
         </div>
         <div className="row d-flex justify-content-center">
           <div className="card border border-dark rounded">

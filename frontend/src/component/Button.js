@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Button = ({ data }) => {
+const Button = ({ data, addInList }) => {
   const [random, setRandom] = useState(Math.floor(Math.random() * 6) + 1);
 
   const register = () => {
@@ -34,6 +34,7 @@ const Button = ({ data }) => {
       data: data,
     })
       .then((response) => {
+        addInList(response.data);
         console.log(response.data);
       })
       .catch((error) => {
