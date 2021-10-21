@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
+@CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
 
     private final UserService userService;
@@ -24,6 +25,11 @@ public class UserController {
     @PutMapping("/update")
     public User update(@RequestBody User user){
         return userService.update(user);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable Integer id){
+        userService.delete(id);
     }
 
     @GetMapping("/getListUser")

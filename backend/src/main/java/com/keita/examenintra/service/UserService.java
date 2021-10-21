@@ -28,6 +28,10 @@ public class UserService {
         );
     }
 
+    public void delete(Integer id){
+        userRepository.deleteById(id);
+    }
+
     public List<User> getListUser() {
         return userRepository.findAll();
     }
