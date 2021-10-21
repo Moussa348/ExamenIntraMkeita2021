@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Button = ({ data, addInList, isFormInvalid }) => {
+const Button = ({ data, addInList, isFormInvalid, reset }) => {
   const [random, setRandom] = useState(Math.floor(Math.random() * 6) + 1);
 
   const register = () => {
@@ -35,6 +35,7 @@ const Button = ({ data, addInList, isFormInvalid }) => {
     })
       .then((response) => {
         addInList(response.data);
+        reset();
         console.log(response.data);
       })
       .catch((error) => {
@@ -45,7 +46,7 @@ const Button = ({ data, addInList, isFormInvalid }) => {
   return (
     <>
       <button
-      disabled={isFormInvalid}
+        disabled={isFormInvalid}
         className="btn shadow-lg rounded btn-primary border text-light"
         onClick={register}
       >

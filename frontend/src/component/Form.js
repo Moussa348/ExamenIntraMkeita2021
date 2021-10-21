@@ -20,13 +20,23 @@ const Form = ({ addInList }) => {
     } else {
       setIsFormInvalid(false);
     }
-    
+
     setData({
       ...data,
       [name]: value,
     });
     console.log(data);
     $event.preventDefault();
+  };
+
+  const reset = () => {
+    setData({
+      id: null,
+      name: "",
+      randomNumber: 0,
+      yourNumber: 0,
+      guessIsRight: false,
+    });
   };
 
   return (
@@ -70,6 +80,7 @@ const Form = ({ addInList }) => {
             data={data}
             addInList={addInList}
             isFormInvalid={isFormInvalid}
+            reset={reset}
           />
         </div>
       </div>
