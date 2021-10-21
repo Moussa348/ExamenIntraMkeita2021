@@ -49,21 +49,29 @@ function App() {
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Guess Utilisateur</th>
+                  <th scope="col">Numéro Random</th>
                 </tr>
               </thead>
 
               <tbody>
                 {list.map((value, key) => (
-                  <tr key={key}>
+                  value.guessIsRight ?
+                  <tr key={key} className="table-success">
                     <th scope="row">{value.id}</th>
                     <td>{value.name}</td>
-                    <td>{value.randomNumber}</td>
                     <td>{value.yourNumber}</td>
+                    <td>{value.randomNumber}</td>
                     <td>{value.guessIsRight}</td>
                   </tr>
+                  : <tr key={key} className="table-danger">
+                  <th scope="row">{value.id}</th>
+                  <td>{value.name}</td>
+                  <td>{value.yourNumber}</td>
+                  <td>{value.randomNumber}</td>
+                  <td>{value.guessIsRight}</td>
+                </tr>
                 ))}
               </tbody>
             </table>

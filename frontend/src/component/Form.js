@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Button from "./Button";
 
-const Form = ({addInList}) => {
+const Form = ({ addInList }) => {
+  const [isFormInvalid, setIsFormInvalid] = useState(false);
+
   const [data, setData] = useState({
     id: null,
     name: "",
@@ -12,11 +14,19 @@ const Form = ({addInList}) => {
 
   const handleChange = ($event) => {
     const { name, value } = $event.target;
+
+    if ((name == "yourNumber" && parseInt(value) < 1) || parseInt(value) > 6) {
+      setIsFormInvalid(true);
+    } else {
+      setIsFormInvalid(false);
+    }
+    
     setData({
       ...data,
       [name]: value,
     });
     console.log(data);
+    $event.preventDefault();
   };
 
   return (
@@ -48,6 +58,7 @@ const Form = ({addInList}) => {
                     name="yourNumber"
                     onChange={handleChange}
                     type="number"
+                    pattern="[1-6]{1}"
                     className="form-control"
                     placeholder="Choose A Number"
                   />
@@ -55,7 +66,11 @@ const Form = ({addInList}) => {
               </form>
             </div>
           </div>
-          <Button data={data} addInList={addInList} />
+          <Button
+            data={data}
+            addInList={addInList}
+            isFormInvalid={isFormInvalid}
+          />
         </div>
       </div>
     </>

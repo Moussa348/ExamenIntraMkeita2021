@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Button = ({ data, addInList }) => {
+const Button = ({ data, addInList, isFormInvalid }) => {
   const [random, setRandom] = useState(Math.floor(Math.random() * 6) + 1);
 
   const register = () => {
@@ -45,6 +45,7 @@ const Button = ({ data, addInList }) => {
   return (
     <>
       <button
+      disabled={isFormInvalid}
         className="btn shadow-lg rounded btn-primary border text-light"
         onClick={register}
       >
