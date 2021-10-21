@@ -27,8 +27,7 @@ function App() {
   }, []);
 
   const addInList = (data) => {
-    list.push(data);
-    setList(list);
+    setList([...list,data]);
   };
 
   return (
