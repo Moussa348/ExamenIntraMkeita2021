@@ -1,16 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
+import GetList from "./GetList";
 
 function App() {
   return (
     <>
-      <div className="container">
-        <div className="row d-flex justify-content-center">
-          <div className="card">asdasdsadasdadsadda</div>
-          <div className="card">asdasdsadasdadsadda</div>
-          <div className="card">asdasdsadasdadsadda</div>
-        </div>
-      </div>
+      <GetList />
     </>
   );
 }
