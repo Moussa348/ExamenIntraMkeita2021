@@ -12,7 +12,6 @@ const Get = ({ id, email, firstName, lastName, phoneNumber, removeById }) => {
   });
 
   const handleChange = ($event) => {
-    console.log($event);
     const { name, value } = $event.target;
     setData({
       ...data,

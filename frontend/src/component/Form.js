@@ -11,7 +11,6 @@ const Form = () => {
   });
 
   const handleChange = ($event) => {
-    console.log($event);
     const { name, value } = $event.target;
     setData({
       ...data,
@@ -74,7 +73,7 @@ const Form = () => {
               </form>
             </div>
           </div>
-          <RegisterButton/>
+          <RegisterButton data={data}/>
         </div>
       </div>
     </>
