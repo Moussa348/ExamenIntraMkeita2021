@@ -10,6 +10,21 @@ const Button = ({ data }) => {
 
     if (data.randomNumber == data.yourNumber) {
       data.guessIsRight = true;
+      alert(
+        "Le dé est : " +
+          data.randomNumber +
+          " Votre choix est : " +
+          data.yourNumber +
+          ", vous avez gagné!"
+      );
+    } else {
+      alert(
+        "Le dé est : " +
+          data.randomNumber +
+          " Votre choix est : " +
+          data.yourNumber +
+          ", vous avez perdu...:("
+      );
     }
 
     axios({
@@ -19,8 +34,6 @@ const Button = ({ data }) => {
       data: data,
     })
       .then((response) => {
-        data.name = "";
-        data.yourNumber = 0;
         console.log(response.data);
       })
       .catch((error) => {

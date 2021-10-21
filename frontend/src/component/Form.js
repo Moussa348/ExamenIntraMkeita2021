@@ -7,7 +7,7 @@ const Form = () => {
     name: "",
     randomNumber: 0,
     yourNumber: 0,
-    guessIsRight: false
+    guessIsRight: false,
   });
 
   const handleChange = ($event) => {
@@ -22,14 +22,16 @@ const Form = () => {
   return (
     <>
       <div className="container">
-        <div className="flex-row d-flex justify-content-center mt-4">
-          <h1>Formulaire</h1>
+        <div className="card border border-dark rounded m-4">
+          <div className="flex-row align-items-center d-flex justify-content-center mt-4">
+            <h1>Formulaire</h1>
+          </div>
         </div>
 
         <div className="row d-flex justify-content-center m-5 mx-auto">
           <div className="card shadow-lg border border-dark rounded text-center">
             <div className="card-body">
-              <form>
+              <form id="form">
                 <div className="form-group m-4">
                   <input
                     type="text"
@@ -53,7 +55,7 @@ const Form = () => {
               </form>
             </div>
           </div>
-          <Button data={data}/>
+          <Button data={data} />
         </div>
       </div>
     </>
