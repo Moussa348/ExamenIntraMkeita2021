@@ -21,9 +21,9 @@ public class DbInit implements CommandLineRunner {
 
     private void insertUsers(){
         List<User> users = Arrays.asList(
-                User.builder().email("marc@gmail.com").firstName("marc").lastName("jean").build(),
-                User.builder().email("jonhatan@gmail.com").firstName("jonhatan").lastName("jean").build(),
-                User.builder().email("mafoud@gmail.com").firstName("mafoud").lastName("jean").build()
+                User.builder().email("marc@gmail.com").firstName("marc").lastName("jean").phoneNumber("5143345678").build(),
+                User.builder().email("jonhatan@gmail.com").firstName("jonhatan").lastName("jean").phoneNumber("5143345678").build(),
+                User.builder().email("mafoud@gmail.com").firstName("mafoud").lastName("jean").phoneNumber("5143345678").build()
         );
 
         userRepository.saveAll(users);

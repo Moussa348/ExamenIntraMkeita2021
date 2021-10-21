@@ -13,7 +13,6 @@ const GetList = () => {
         responseType: "json",
       })
         .then((response) => {
-          console.log(response.data);
           setList(response.data);
         })
         .catch((error) => {
@@ -22,12 +21,12 @@ const GetList = () => {
     };
 
     findAll();
-    console.log(list);
   }, []);
 
   const removeById = (id) => {
     setList(list.filter((o) => o.id != id));
   };
+
 
   return (
     <>

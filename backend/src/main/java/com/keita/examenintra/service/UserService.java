@@ -2,9 +2,7 @@ package com.keita.examenintra.service;
 
 import com.keita.examenintra.model.User;
 import com.keita.examenintra.repository.UserRepository;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -22,13 +20,12 @@ public class UserService {
     }
 
     public User update(User user) {
-        return userRepository.save(
-                userRepository.findById(user.getId())
-                        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cant find user"))
-        );
+        if (userRepository.existsById(user.getId()))
+            return userRepository.save(user);
+        return null;
     }
 
-    public void delete(Integer id){
+    public void delete(Integer id) {
         userRepository.deleteById(id);
     }
 
