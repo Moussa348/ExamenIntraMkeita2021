@@ -21,6 +21,6 @@ public class GuessChoice implements Serializable {
     @GeneratedValue
     private Integer id;
     private String name;
-    private Integer randomNumber;
-    private boolean win;
+    private Integer randomNumber,yourNumber;
+    private boolean guessIsRight;
 }
