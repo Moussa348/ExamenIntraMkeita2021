@@ -17,6 +17,7 @@ const Form = () => {
       [name]: value,
     });
     console.log(data);
+    console.log(data);
   };
   return (
     <>
