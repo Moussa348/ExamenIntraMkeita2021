@@ -44,7 +44,7 @@ function App() {
           </div>
 
           <div className="row d-flex justify-content-center m-5">
-            <table className="table">
+            <table className="table border shadow-lg table-hover">
               <thead>
                 <tr>
                   <th scope="col">#</th>

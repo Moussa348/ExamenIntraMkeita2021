@@ -35,6 +35,7 @@ const Button = ({ data, addInList, isFormInvalid, reset }) => {
     })
       .then((response) => {
         addInList(response.data);
+        setRandom(Math.floor(Math.random() * 6) + 1);
         reset();
         console.log(response.data);
       })
